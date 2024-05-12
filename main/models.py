@@ -35,3 +35,12 @@ class CarModels(models.Model):
 
     def __str__(self):
         return self.name
+    
+    
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(blank=True, null=True)
+    phone = models.CharField(max_length=255)
+    body = models.TextField()
+    is_show = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)

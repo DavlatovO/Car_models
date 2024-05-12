@@ -1,43 +1,61 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/contact.css' %}">
-
-<div class="container">
-	<div class="row">
-			<h1>contact us</h1>
-	</div>
-	<div class="row">
-			<h4 style="text-align:center">We'd love to hear from you!</h4>
-	</div>
-	<div class="row input-container">
-			<div class="col-xs-12">
-				<div class="styled-input wide">
-					<input type="text" required />
-					<label>Name</label> 
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-12">
-				<div class="styled-input">
-					<input type="text" required />
-					<label>Email</label> 
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-12">
-				<div class="styled-input" style="float:right;">
-					<input type="text" required />
-					<label>Phone Number</label> 
-				</div>
-			</div>
-			<div class="col-xs-12">
-				<div class="styled-input wide">
-					<textarea required></textarea>
-					<label>Message</label>
-				</div>
-			</div>
-			<div class="col-xs-12">
-				<div class="btn-lrg submit-btn">Send Message</div>
-			</div>
-	</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <h1>Contact Us</h1>
+    </div>
+    <div class="row">
+      <h4 style="text-align:center">We'd love to hear from you!</h4>
+    </div>
 
 
+	<form method="post" action="{% url 'contact' %}">
+		{% csrf_token %}
+	  <div class="row input-container">
+		<div class="col-xs-12">
+			<div class="styled-input wide">
+		<input type="text" class="styled-input" placeholder="Your Name" name="name" />
+	    </div>
+	    </div> 
+
+		<div class="col-md-6 col-sm-12">
+			<div  class="styled-input" style="float:right;">
+				<input type="text" class="styled-input" placeholder="Your Phone" name="phone" />
+			</div>  
+		  </div>
+	  
+		<div class="col-md-6 col-sm-12">
+		    <div class="styled-input">
+		      <input type="email"  class="styled-input" placeholder="Your Email" name="email" />
+ 	        </div> 
+	    </div>
+	  
+	  
+	 
+	  <div class="col-xs-12">
+		<div class="styled-input wide">
+		<input type="text" class="styled-input wide" placeholder="Message" name="message" />
+	    </div>	  
+	  </div>
+	  
+	  <div class="col-xs-12">
+		
+			<button class="btn-lrg submit-btn">Submit</button>
+		
+	  </div>
+
+	</div>
+	</form> 
+
+  </div>
+</body>
+</html>
