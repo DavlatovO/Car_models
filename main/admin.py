@@ -21,5 +21,6 @@ class CategoriesAdmin(admin.ModelAdmin):
 admin.site.register(models.Category, CategoriesAdmin)
 admin.site.register(models.CarModels, CarsAdmin)
 admin.site.register(models.Contact)
+admin.site.register(models.User)
 
 

@@ -88,7 +88,7 @@
 				            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 				                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 				                    <li class=" scroll active"><a href="#home">home</a></li>
-				                    <li class="scroll"><a href="#service">service</a></li>
+				                    <li><a href="{% url 'login' %}">login</a></li>
 				                    <li class="scroll"><a href="#featured-cars">featured cars</a></li>
 				                    <li class="scroll"><a href="#new-cars">new cars</a></li>
 				                    <li class="scroll"><a href="#brand">brands</a></li>
@@ -329,6 +329,7 @@
 				<div class="featured-cars-content">
 					<div class="row">
 						{% for r in cars %}
+						<a href="{% url 'car_detail' r.slug %}">
 						<div class="col-lg-3 col-md-4 col-sm-6">
 							<div class="single-featured-cars">
 								<div class="featured-img-box">
@@ -352,6 +353,7 @@
 									</p>
 								</div>
 							</div>
+						</a>
 						</div>
 						{% endfor %}
 					</div>

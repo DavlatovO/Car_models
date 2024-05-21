@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+<div class="new-cars-content">
+    <div class="owl-carousel owl-theme" id="new-cars-carousel">
+        <div class="new-cars-item">
+            <div class="single-new-cars-item">
+                <div class="row">
+                    <div class="col-md-7 col-sm-12">
+                        <div class="new-cars-img">
+                            <img src="{{car.image.url}}" alt="img"/>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        <div class="new-cars-txt">
+                            <h2><a href="#">{{car.name}} <span>{{car.category}}</span></a></h2>
+                            <h2><a href="#">Price:${{car.price}}</a></h2>
+                            <h2><a href="#">Year:{{car.madeyear}}</a></h2>
+                            <p class="new-cars-para2">
+                                Eng yaxshi modellarni bizning do'konimizdan xarid qiling
+                            </p>
+                        </div><!--/.new-cars-txt-->	
+                    </div><!--/.col-->
+                </div><!--/.row-->
+            </div><!--/.single-new-cars-item-->
+        </div><!--/.new-cars-item-->
+    </div><!--/#new-cars-carousel-->
+</div><!--/.new-cars-content-->
+
+{% endblock %}
